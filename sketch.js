@@ -23,7 +23,7 @@ let colidiu = false;
 
 //placar do jogo
 let meusPontos = 0;
-let pontosOponentes =0;
+let pontosDoOponente = 0;
 
 function setup() {
     createCanvas(600, 400);
@@ -36,7 +36,6 @@ function draw() {
     verificaColisaoBorda(); // 4 - Verifica Colisão da bolinha
     mostraRaquete(xRaquete, yRaquete);
     movimentaRaquete();
-    //verificaColisaoRaquete();
     verificaColisaoRaquete(xRaquete, yRaquete);
     mostraRaquete(xRaqueteOponente, yRaqueteOponente);
     movimentaRaqueteOponente();
@@ -76,21 +75,6 @@ function movimentaRaquete() {
         yRaquete += 10;
       }
     }
-function verificaColisaoRaquete() {
-    let esquerdaBolinha = xBolinha - raio;
-    let superiorBolinha = yBolinha - raio;
-    let inferiorBolinha = yBolinha + raio;
-    
-    let direitaRaquete = xRaquete + raqueteComprimento;
-    let superiorRaquete = yRaquete;
-    let inferiorRaquete = yRaquete + raqueteAltura;	
-    
-    if (esquerdaBolinha < direitaRaquete
-        && superiorBolinha < inferiorRaquete
-        && inferiorBolinha > superiorRaquete) {
-        velocidadeXBolinha *= -1;
-    }
-}
 
 function verificaColisaoRaquete(x, y) {
     colidiu = collideRectCircle(x, y, raqueteComprimento, raqueteAltura, xBolinha, yBolinha, raio);
@@ -108,7 +92,7 @@ function movimentaRaqueteOponente() {
 function incluiPlacar() {
     fill(255); 
     text(meusPontos, 278, 26);
-    text(pontosOponentes, 321, 26);
+    text(pontosDoOponente, 321, 26);
 }
 
 function marcaPonto() {
