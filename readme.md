@@ -4,4 +4,4 @@ Repositório criado para aplicação prática dos conceitos do curso "HTML5 e CS
 
 # Projeto no scratch:
 
-[text](https://scratch.mit.edu/projects/1026542723/)
+[Link do Projeto](https://scratch.mit.edu/projects/1026542723/)
